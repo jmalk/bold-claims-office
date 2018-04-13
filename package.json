@@ -1,0 +1,14 @@
+{
+  "name": "bold-claims-office",
+  "version": "1.0.0",
+  "description": "\"Twitter bot to find bold claims\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
+}
