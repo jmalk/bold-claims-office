@@ -11,11 +11,14 @@ const searchParameters = {
 };
 
 twitterClient.get('search/tweets', searchParameters, (err, data, response) => {
-  if(!err){
-    console.log(`Response: ${JSON.stringify(response, null, 2)}`);
-    console.log(`Data: ${JSON.stringify(data, null, 2)}`);
+  if (err) {
+    console.error(err);
   } else {
-    console.log(err);
+    logTweets(data, response);
   }
 });
 
+function logTweets (data, response) {
+  console.log(`Response: ${JSON.stringify(response, null, 2)}`);
+  console.log(`Data: ${JSON.stringify(data, null, 2)}`);
+};
