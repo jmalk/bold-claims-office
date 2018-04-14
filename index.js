@@ -4,8 +4,8 @@ const config = require('./config.js');
 const twitterClient = new Twitter(config);
 
 const searchParameters = {
-  q: 'idoneth',
-  count: 10,
+  q: '#paintingwarhammer -filter:retweets',
+  count: 5,
   result_type: 'recent',
   lang: 'en'
 };
@@ -19,6 +19,8 @@ twitterClient.get('search/tweets', searchParameters, (err, data, response) => {
 });
 
 function logTweets (data, response) {
-  console.log(`Response: ${JSON.stringify(response, null, 2)}`);
-  console.log(`Data: ${JSON.stringify(data, null, 2)}`);
+  console.log(`
+    Statuses:
+    ${JSON.stringify(data.statuses.map((status) => status.text), null, 2)}
+  `)
 };
